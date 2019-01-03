@@ -1,0 +1,274 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<documents xmlns:str="http://www.metaphoricalweb.org/xmlns/string-utilities" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <document>
+    <title>The effect of caffeine ingestion on cardiovascular and thermoregulatory function during maximal and submaximal exercise</title>
+    <publication-date>1985-01-01</publication-date>
+    <publication_date_date_format>YYYY-MM-DD</publication_date_date_format>
+    <authors>
+      <author xsi:type="individual">
+        <email/>
+        <institution>Iowa State University</institution>
+        <lname>Miller</lname>
+        <fname>Jeff</fname>
+        <mname/>
+        <suffix/>
+      </author>
+    </authors>
+    <disciplines>
+      <discipline>Kinesiology</discipline>
+      <discipline>Education</discipline>
+    </disciplines>
+    <keywords>
+      <keyword>Physical Education</keyword>
+    </keywords>
+    <abstract/>
+    <fulltext-url>https://behost.lib.iastate.edu/DR/Miller_ISU-1985-M6146.pdf</fulltext-url>
+    <document-type>thesis</document-type>
+    <degree_name>Master of Science</degree_name>
+    <department>Kinesiology</department>
+    <abstract_format>html</abstract_format>
+    <fields>
+      <field name="language" type="string">
+        <value>en</value>
+      </field>
+      <field name="provenance" type="string">
+        <value>Iowa State University</value>
+      </field>
+      <field name="copyright_date" type="string">
+        <value>1985</value>
+      </field>
+      <field name="file_size" type="string">
+        <value>79 pages</value>
+      </field>
+      <field name="fileformat" type="string">
+        <value>application/pdf</value>
+      </field>
+      <field name="rights_holder" type="string">
+        <value>Jeff Miller</value>
+      </field>
+      <field name="major" type="string">
+        <value>Physical Education</value>
+      </field>
+      <field name="oclc_number" type="string">
+        <value>14159135</value>
+      </field>
+    </fields>
+  </document>
+
+  <document>
+    <title>Design and performance of a spring-damper device for controlling plow lateral cutting angle</title>
+    <publication-date>1976-01-01</publication-date>
+    <publication_date_date_format>YYYY-MM-DD</publication_date_date_format>
+    <authors>
+      <author xsi:type="individual">
+        <email/>
+        <institution>Iowa State University</institution>
+        <lname>Al-Jalil</lname>
+        <fname>Hamid</fname>
+        <mname>Fadhil</mname>
+        <suffix/>
+      </author>
+    </authors>
+    <disciplines>
+      <discipline>Agricultural and Biosystems Engineering</discipline>
+      <discipline>Engineering</discipline>
+    </disciplines>
+    <keywords>
+      <keyword>Agricultural Engineering</keyword>
+    </keywords>
+    <abstract/>
+    <fulltext-url>https://behost.lib.iastate.edu/DR/Al-Jalil_ISU-1976-AL48.pdf</fulltext-url>
+    <document-type>thesis</document-type>
+    <degree_name>Master of Science</degree_name>
+    <department>Agricultural and Biosystems Engineering</department>
+    <abstract_format>html</abstract_format>
+    <fields>
+      <field name="language" type="string">
+        <value>en</value>
+      </field>
+      <field name="provenance" type="string">
+        <value>Iowa State University</value>
+      </field>
+      <field name="copyright_date" type="string">
+        <value>1976</value>
+      </field>
+      <field name="file_size" type="string">
+        <value>93 pages</value>
+      </field>
+      <field name="fileformat" type="string">
+        <value>application/pdf</value>
+      </field>
+      <field name="rights_holder" type="string">
+        <value>Hamid Fadhil Al-Jalil</value>
+      </field>
+      <field name="major" type="string">
+        <value>Agricultural Engineering</value>
+      </field>
+      <field name="oclc_number" type="string">
+        <value>18787304</value>
+      </field>
+    </fields>
+  </document>
+
+  <document>
+    <title>Fuzzy intrusion detection</title>
+    <publication-date>2001-01-01</publication-date>
+    <publication_date_date_format>YYYY-MM-DD</publication_date_date_format>
+    <authors>
+      <author xsi:type="individual">
+        <email/>
+        <institution>Iowa State University</institution>
+        <lname>Dickerson</lname>
+        <fname>John</fname>
+        <mname>Edward</mname>
+        <suffix/>
+      </author>
+    </authors>
+    <disciplines/>
+    <keywords>
+      <keyword>Computer Engineering</keyword>
+    </keywords>
+    <abstract>Visual data mining techniques are used to assess which metrics are most effective at detecting different types of attacks. The research confirms that data aggregation and data reduction play crucial roles in the formation of the metrics. Once the proper metrics are identified, fuzzy rules are constructed for detecting attacks in several categories. The attack categories are selected to match the different phases that intruders frequently use when attacking a system. A suite of attacks tools is assembled to test the fuzzy rules. The research shows that fuzzy rules applied to good metrics can provide an effective means of detecting a wide variety of network intrusion activity. This research is being used as a proof of concept for the development of system known as the Fuzzy Intrusion Recognition Engine (FIRE).This thesis examines the application of fuzzy systems to the problem of network intrusion detection. Historically, there have been two primary methods of performing intrusion detection: misuse detection and anomaly detection. In misuse detection, a database of attack signatures is maintained that match known intrusion activity. While misuse detection systems are very effective, they require constant updates to the signature database to remain effective or to detect distinctly new attacks. Anomaly detection systems attempt to discover suspicious behavior by comparing system activity against past usage profiles. In this research, network activity is collected and usage profiles established for a variety of metrics. A network data gathering and data analysis tool was developed to create the metrics from the network stream. Great care is given to identifying the metrics that are most suitable for detecting intrusion activity.</abstract>
+    <fulltext-url>https://behost.lib.iastate.edu/DR/Dickerson_ISU-2001-D53.pdf</fulltext-url>
+    <document-type>thesis</document-type>
+    <degree_name>Master of Science</degree_name>
+    <department/>
+    <abstract_format>html</abstract_format>
+    <fields>
+      <field name="language" type="string">
+        <value>en</value>
+      </field>
+      <field name="provenance" type="string">
+        <value>Iowa State University</value>
+      </field>
+      <field name="copyright_date" type="string">
+        <value>2001</value>
+      </field>
+      <field name="file_size" type="string">
+        <value>74 pages</value>
+      </field>
+      <field name="fileformat" type="string">
+        <value>application/pdf</value>
+      </field>
+      <field name="rights_holder" type="string">
+        <value>John Edward Dickerson</value>
+      </field>
+      <field name="major" type="string">
+        <value>Computer Engineering</value>
+      </field>
+      <field name="oclc_number" type="string">
+        <value>47045986</value>
+      </field>
+    </fields>
+  </document>
+
+  <document>
+    <title>Reported speech : empirical corpus findings compared with EFL/ESL textbook presentations</title>
+    <publication-date>2001-01-01</publication-date>
+    <publication_date_date_format>YYYY-MM-DD</publication_date_date_format>
+    <authors>
+      <author xsi:type="individual">
+        <email/>
+        <institution>Iowa State University</institution>
+        <lname>Eckhardt</lname>
+        <fname>Suzanne</fname>
+        <mname/>
+        <suffix/>
+      </author>
+    </authors>
+    <disciplines>
+      <discipline>Sciences and Humanities</discipline>
+      <discipline>English</discipline>
+    </disciplines>
+    <keywords>
+      <keyword>English</keyword>
+    </keywords>
+    <abstract>Reported speech behaves much differently in the Conversation register than in the News register. Reported speech also occurs more than three times as often in News than in Conversation. The textbooks do not address these register variations. Additionally, in all registers, the verb say emerges as the most common reporting verb, followed by tell. Most other reporting verbs presented in the textbooks are relatively infrequent. The verb tense "backshifting" process advocated in the textbooks occurs in only 50 to 70 percent of reported speech instances. Therefore, the alternative verb tense combinations, Past-Present, Present-Present, and Present-Past occur more frequently than the textbooks claim. Findings from this study can be used to further inform our grammatical descriptions of reported speech. ESL/EFL textbook and materials writers can use these findings to prioritize their presentations of reported speech according to naturally-occurring usage patterns.This study uses the method of corpus linguistics to investigate a particular grammatical topic in English: Reported Speech. First, presentations of reported speech in seven ESL/EFL (English as a Second/Foreign Language) grammar textbooks are analyzed. The results of the analysis show what information ESL/EFL students currently receive from textbooks about reported speech. Second, a corpus study is implemented to determine how people actually use reported speech in real life. The results of the empirical corpus study represent authentic, naturally-occurring language and reported speech patterns in two registers of American English: Newspaper Writing and Conversation. Third, the results from the corpus study are compared with the results from the textbook analysis. This comparison establishes the extent to which the textbooks present real-life reported speech in terms of 1) reporting verbs used, 2) verb tense changes, and 3) register variation. The findings reveal that some aspects of the textbooks' presentations reflect naturally-occurring language and other aspects do not. Most importantly, the empirical corpus findings point to register variation as an essential component in describing reported speech accurately.</abstract>
+    <fulltext-url>https://behost.lib.iastate.edu/DR/Eckhardt_ISU-2001-E25.pdf</fulltext-url>
+    <document-type>thesis</document-type>
+    <degree_name>Master of Arts</degree_name>
+    <department>English</department>
+    <abstract_format>html</abstract_format>
+    <fields>
+      <field name="language" type="string">
+        <value>en</value>
+      </field>
+      <field name="provenance" type="string">
+        <value>Iowa State University</value>
+      </field>
+      <field name="copyright_date" type="string">
+        <value>2001</value>
+      </field>
+      <field name="file_size" type="string">
+        <value>99 pages</value>
+      </field>
+      <field name="fileformat" type="string">
+        <value>application/pdf</value>
+      </field>
+      <field name="rights_holder" type="string">
+        <value>Suzanne Eckhardt</value>
+      </field>
+      <field name="major" type="string">
+        <value>English</value>
+      </field>
+      <field name="oclc_number" type="string">
+        <value>47982140</value>
+      </field>
+    </fields>
+  </document>
+
+  <document>
+    <title>Graphic user interface design for wireless application protocol</title>
+    <publication-date>2002-01-01</publication-date>
+    <publication_date_date_format>YYYY-MM-DD</publication_date_date_format>
+    <authors>
+      <author xsi:type="individual">
+        <email/>
+        <institution>Iowa State University</institution>
+        <lname>Choo</lname>
+        <fname>Sung-Phil</fname>
+        <mname/>
+        <suffix/>
+      </author>
+    </authors>
+    <disciplines>
+      <discipline>Design</discipline>
+      <discipline>Art and Design</discipline>
+    </disciplines>
+    <keywords>
+      <keyword>Graphic Design</keyword>
+    </keywords>
+    <abstract>This research addresses the recognizability of icon design in Wireless Application Protocol (WAP) devices. It deals specifically with graphic user interface (GUI) and the effective functionality of the icons on WAP screens by increasing their recognizability. In order to propose recognizable WAP icons, this research reviews a case study that focuses on the logical approach and creative processes used in graphic design. This study consists of a literature review and the procedural development of specific WAP icons. The literature review identifies performance design criteria for WAP icons, both for evaluation and design purposes. In this case study, the process of WAP icon development is broken down into three parts: realization of WAP users' needs, an investigation of images for WAP icons, and the creation for prototypical icons for WAP screens. To investigate images and develop prototypes, a matrix is used. The prototypical WAP icons are evaluated using the performance criteria developed from the literature review. As a result of this WAP icon design process, this study develops WAP icons that can be more functional, recognizable, and standard for WAP screens. Moreover, this research not only suggests prototypical icons for WAP screens but also produces a framework with a logical process and a creative design process that can be applied to further research on WAP icon design and graphic user interface. This study should be understood as the first step of an exploratory study about WAP icon design in the field of graphic design.</abstract>
+    <fulltext-url>https://behost.lib.iastate.edu/DR/Choo_ISU-2002-C478.pdf</fulltext-url>
+    <document-type>thesis</document-type>
+    <degree_name>Master of Fine Arts</degree_name>
+    <department>Art and Design</department>
+    <abstract_format>html</abstract_format>
+    <fields>
+      <field name="language" type="string">
+        <value>en</value>
+      </field>
+      <field name="provenance" type="string">
+        <value>Iowa State University</value>
+      </field>
+      <field name="copyright_date" type="string">
+        <value>2002</value>
+      </field>
+      <field name="file_size" type="string">
+        <value>99 pages</value>
+      </field>
+      <field name="fileformat" type="string">
+        <value>application/pdf</value>
+      </field>
+      <field name="rights_holder" type="string">
+        <value>Sung-Phil Choo</value>
+      </field>
+      <field name="major" type="string">
+        <value>Graphic Design</value>
+      </field>
+      <field name="oclc_number" type="string">
+        <value>50997171</value>
+      </field>
+    </fields>
+  </document>
+</documents>
