@@ -25,8 +25,8 @@ $ conda create -n "rtd_env" python=2.7
 $ pip install -r requirements.txt
 ```
 
-Next, make sure paths in *code\_base/rtd\_workflow\_wMARCFINDER.py* and
-*manual\_metadata.py* are both correct. Pay particular attention to the
+Next, make sure paths in [rtd_workflow_wMARCFINDER.py](code_base/rtd_workflow_wMARCFINDER.py) and
+[manual_metadata.py](manual_metadata.py) are both correct. Pay particular attention to the
 pdf\_reader variable, as this is the most likely to need updated.
 
 Finally, run the metadata.bat file.
