@@ -29,6 +29,7 @@ Next, confirm that the paths in [rtd_workflow_wMARCFINDER.py](code_base/rtd_work
 [manual_metadata.py](manual_metadata.py) are both correct.
 
 *list of variables*
+
 | Variable Name    | Description                             |
 |------------------|-----------------------------------------|
 | pdf_reader       | | Path to Adobe or similar reader       |
