@@ -33,7 +33,6 @@ Next, confirm that the paths in [rtd_workflow_wMARCFINDER.py](code_base/rtd_work
 | Variable Name    | Description                             |
 |------------------|-----------------------------------------|
 | pdf_reader       | Path to Adobe or similar reader         |
-| triplestore      | Creates directory for rdf triplestore   |
 | pdf_path         | Path to retrospective theses            |
 | authority_path   | Path to authority files                 |
 | marc_record      | Path to marc record                     |
