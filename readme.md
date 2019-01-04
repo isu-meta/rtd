@@ -29,23 +29,15 @@ Next, confirm that the paths in [rtd_workflow_wMARCFINDER.py](code_base/rtd_work
 [manual_metadata.py](manual_metadata.py) are both correct.
 
 *list of variables*
-+------------------+-----------------------------------------+
 | Variable Name    | Description                             |
-+------------------+-----------------------------------------+
+|------------------|-----------------------------------------|
 | pdf_reader       | | Path to Adobe or similar reader       |
-+------------------+-----------------------------------------+
 | triplestore      | | Creates directory for rdf triplestore |
-+------------------+-----------------------------------------+
 | pdf_path         | | Path to retrospective theses          |
-+------------------+-----------------------------------------+
 | authority_path   | | Path to authority files               |
-+------------------+-----------------------------------------+
 | marc_record      | | Path to marc record                   |
-+------------------+-----------------------------------------+
 | authority_turtle | | Related to authority_path             |
-+------------------+-----------------------------------------+
 | merge            | | Path to the merge.xsl file            |
-+------------------+-----------------------------------------+
 
 
 Finally, run the metadata.bat file.
