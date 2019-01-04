@@ -6,9 +6,9 @@ Creates BePress XML from the pdf files of retrospective theses.
 Prerequisites
 --------------
 
-#########
-saxon he
-#########
+
+* saxon he
+
 
 This code assumes you have saxon available for xslt transformations. We
 are using the [Saxon HE for .Net](http://saxon.sourceforge.net/)
