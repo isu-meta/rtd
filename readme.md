@@ -22,6 +22,7 @@ Clone the repository and create an anaconda2 environment.
 $ git clone https://github.com/wryan14/rtd.git
 $ cd rtd
 $ conda create -n "rtd_env" python=2.7
+$ activate rtd_env
 $ pip install -r requirements.txt
 ```
 
