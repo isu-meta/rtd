@@ -53,3 +53,9 @@ Other Institutions
 Those working with Non-ISU theses will need to replace [kt_thesis.mrc](MachineReadable/kt_thesis.mrc) with the appropriate marc record. All
 of the authorities files will also need modification to reflect the new
 institution.
+
+Documentation
+--------------
+
+https://mddocs.readthedocs.io/en/latest/theses.html#rtds
+
