@@ -100,13 +100,15 @@ if __name__ == "__main__":
     create_metadata()
     check_metadata(xml_outfile)
     make_oclc_list(oclc_file)
-    #open_oclc_list(oclc_file)
+    #open_oclc_list(oclc_file) # Need to debug this one.
+    #Remove the print below once the above function is fixed.
+    print("Open oclc_list.txt and edit it according to https://mddocs.readthedocs.io/en/latest/theses.html#rtds")
 
-    input("Press Enter to continue...")
+    input("Press Enter to continue. To exit, press Ctl+C.")
 
     subprocess.run(["python", os.path.join(my_path, "manual_metadata.py")])
 
-    input("Press Enter to continue...")
+    input("Press Enter to continue. To exit, press Ctl+C.")
 
     reset(xml_outfile)
     check_metadata(xml_outfile2)
@@ -114,7 +116,7 @@ if __name__ == "__main__":
 script again, or talk to a librarian for further assistance.
 If everything looks okay please hit enter.""")
 
-    input("Press Enter to continue...")
+    input("Press Enter to continue. To exit, press Ctl+C.")
 
     commit()
     for f in os.listdir(my_path):
