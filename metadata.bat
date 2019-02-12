@@ -1,5 +1,5 @@
 @echo off
-call activate test_envs
+rem call activate env_rtd
 set mypath=%cd%
 cd %mypath%
 del /S *batch.xml

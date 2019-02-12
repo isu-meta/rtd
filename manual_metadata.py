@@ -2,37 +2,39 @@
 # OCLC number need to be manually collected
 import sys
 import os
-sys.path.append(os.getcwd()+"\code_base")
+sys.path.append(os.path.join(os.getcwd(), "rtd"))
 
 import logging
 
-from metabeqc import roottag, xmltransform
-from rtd2 import XMLBuilder
+from rtd.metabeqc import roottag, xmltransform, PDFPress
+from rtd.rtd2 import XMLBuilder
 from rdflib import Graph, URIRef, Namespace, Literal
-from pyPdf import PdfFileReader
-from metabeqc import PDFPress
+from PyPDF2 import PdfFileReader
 
 logging.basicConfig()
 # executable
-pdf_reader = 'C:\Program Files (x86)\Adobe\Acrobat 11.0\Acrobat\Acrobat.exe'
+pdf_reader = 'C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat\Acrobat.exe'
 
 # paths
-code = os.getcwd()+'\code_base'
-path = os.getcwd()
-triplestore = path + "\\RDF_TripleStore"
-pdf_path = path + "\\RTD_PDF"
-authority_path = path + "\\Authorities"
+path = "C:\\Users\\wteal\\Projects\\rtd"
+code = os.path.join(path, "rtd")
+triplestore = os.path.join(path, "RDF_TripleStore")
+pdf_path = os.path.join(path, "RTD_PDF")
+authority_path = os.path.join(path, "Authorities")
 
-authority_turtle = path + "\\Authorities\\DisciplineLookup.ttl'"
-merge = code + "\\merge.xsl"
+authority_turtle = os.path.join(authority_path, "DisciplineLookup.ttl")
+merge = os.path.join(code, "merge.xsl")
 # oclc_list should include filename, .ttl, and degree. Sample Input for oclc_list:
 # 'Madsen_ISU-1978-M2671.pdf$http://www.worldcat.org/oclc/4444949.ttl$http://lib.iastate.edu/#degrees-MasterofScience'
-directory = authority_path + "\\XMLFiles"
+directory = os.path.join(authority_path, "XMLFiles")
 if not os.path.exists(directory):
     os.makedirs(directory)
 
-oclc_list = open(path+"\oclc_list.txt",'r').readlines()
-oclc_list = map(lambda s: s.strip(), oclc_list)
+with open(os.path.join(path, "oclc_list.txt"), "r") as fh:
+    oclc_list = [item.strip() for item in list(fh)]
+
+#oclc_list = open(os.path.join(path, "oclc_list.txt"),'r').readlines()
+#oclc_list = map(lambda s: s.strip(), oclc_list)
 g = Graph(store='Sleepycat', identifier='RTD')
 g.open(triplestore, create=True)
 fake = Namespace('http://lib.dr.iastate.edu/Fake#')
@@ -41,7 +43,7 @@ for item in oclc_list:
     newitem = item.split('$')
     localpdf = newitem[0]
     degrees = "http://lib.iastate.edu/#degrees-MasterofScience"
-    fullpdf = pdf_path + '\\' + localpdf 
+    fullpdf = os.path.join(pdf_path, localpdf)
     try:
         oclcURI = newitem[1].replace('.ttl', "")
     except IndexError:
@@ -52,11 +54,11 @@ for item in oclc_list:
     pdfopen = PdfFileReader(open(fullpdf, 'rb'))
     pdfpages = pdfopen.getNumPages()
     g.add((URIRef(oclcURI), fake.pageCount, Literal(str(pdfpages) + " pages")))
-    PDF = PDFPress(fullpdf, pdfreader=pdf_reader)
+    PDF = PDFPress(file=fullpdf, pdfreader=pdf_reader)
     PDF.genfile()
     PDF.genlines()
     PDF.findmajor()
-    old_major = PDF.reconcilemajor(authority_path + '\\ListofMajors.csv')
+    old_major = PDF.reconcilemajor(os.path.join(authority_path, 'ListofMajors.csv'))
     old_major_uri = URIRef("http://lib.iastate.edu/#majors-%s_major" % old_major.replace(" ", ""))
     g.add((URIRef(oclcURI), fake.major, old_major_uri))
     continue
@@ -204,14 +206,14 @@ for row in qres:
                     abstract="".join([x for x in new_r_abstract if x is not None]))
     # Merge XML files for batch upload and move output to desired directory
 
-inpath = authority_path + '\\XMLFiles'
+inpath = os.path.join(authority_path, "XMLFiles")
 fileinpath = os.listdir(inpath)[0]
-newinpath = inpath + "\\" + fileinpath
+newinpath = os.path.join(inpath, fileinpath)
 
-outpath = path + '\\outfile2.xml'
-merge_var = path + '\\code_base\\merge.xsl'
+outpath = os.path.join(path, 'outfile2.xml')
+merge_var = os.path.join(path, "rtd", "merge.xsl")
 
 xmltransform(newinpath, merge_var, outpath)
-roottag(path + '\\outfile2.xml')
+roottag(outpath)
 
 g.close()
