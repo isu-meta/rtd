@@ -13,7 +13,7 @@ from PyPDF2 import PdfFileReader
 
 logging.basicConfig()
 # executable
-pdf_reader = 'C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat\Acrobat.exe'
+pdf_reader = 'C:\\Program Files (x86)\\Adobe\\Acrobat DC\\Acrobat\\Acrobat.exe'
 
 # paths
 path = "C:\\Users\\wteal\\Projects\\rtd"
@@ -30,7 +30,7 @@ directory = os.path.join(authority_path, "XMLFiles")
 if not os.path.exists(directory):
     os.makedirs(directory)
 
-with open(os.path.join(path, "oclc_list.txt"), "r") as fh:
+with open(os.path.join(path, "oclc_list.txt"), "r", encoding="utf-8") as fh:
     oclc_list = [item.strip() for item in list(fh)]
 
 #oclc_list = open(os.path.join(path, "oclc_list.txt"),'r').readlines()
@@ -48,6 +48,8 @@ for item in oclc_list:
         oclcURI = newitem[1].replace('.ttl', "")
     except IndexError:
         print(item, 'out of range')
+
+    print(oclcURI)
     g.parse(newitem[1], format='ttl')
     g.add((URIRef(oclcURI), fake.fileName, Literal(localpdf)))
     g.add((URIRef(oclcURI), fake.degree, URIRef(degrees)))

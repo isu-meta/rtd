@@ -44,7 +44,7 @@ def rtd_metadata(code=code, path=path, triplestore=triplestore, pdf_path=pdf_pat
 
     # SPARQL Query
     qres = g.query(
-        """
+       """
        PREFIX bgn:<http://bibliograph.net/> 
        PREFIX fake:<http://lib.dr.iastate.edu/Fake#> 
        PREFIX genont:<http://www.w3.org/2006/gen/ont#> 

@@ -313,8 +313,11 @@ class XMLBuilder(object):
         if not os.path.exists(directory):
             os.makedirs(directory)
         try:
-            outfile = open("XMLFiles/" + oclc + ".xml", "w")
-            outfile.write(etree.tostring(self.root, encoding="ISO-8859-1", xml_declaration=True, pretty_print=True).decode("utf8"))
+            with open(os.path.join("XMLFiles", f"{oclc}.xml"), "w", encoding="utf-8", errors="xmlcharrefreplace") as outfile:
+                out_tree = etree.tostring(self.root, encoding="utf-8", xml_declaration=True, pretty_print=True).decode("utf-8")
+                outfile.write(out_tree)
+
         except ValueError:
-            outfile = open("XMLFiles/default.xml", 'w')
-            outfile.write(etree.tostring(self.root, encoding='ISO-8859-1', xml_declaration=True, pretty_print=True))
+            with open("XMLFiles/default.xml", "w", encoding="utf-8", errors="xmlcharrefreplace") as outfile:
+                out_tree = etree.tostring(self.root, encoding="utf-8", xml_declaration=True, pretty_print=True).decode("utf-8")
+                outfile.write(out_tree)

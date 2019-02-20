@@ -1,4 +1,4 @@
-# -*- encoding: iso-8859-1 -*-
+# -*- encoding: utf-8 -*-
 import csv
 import datetime
 import glob
@@ -107,14 +107,14 @@ class BePress(object):
         elem3 = tree.findall('.//author/lname')[0]
         elem3.text = str(self.lname)
         tree = (etree.ElementTree(tree.getroot()))
-        tree.write(self.file, xml_declaration=True, encoding='iso-8859-1', method='xml')
+        tree.write(self.file, xml_declaration=True, encoding='utf-8', method='xml')
 
     def committitle(self):
         tree = etree.parse(self.file)
         elem = tree.findall('.//title')[0]
         elem.text = str(self.title)
         tree = (etree.ElementTree(tree.getroot()))
-        tree.write(self.file, xml_declaration=True, encoding='iso-8859-1', method='xml')
+        tree.write(self.file, xml_declaration=True, encoding='utf-8', method='xml')
 
     # --------------------------------------------------------------------------------------
     def xmlfield(self, item):
@@ -150,7 +150,7 @@ class BePress(object):
             item.text = self.field
             break
         tree = (etree.ElementTree(tree.getroot()))
-        tree.write(self.file, xml_declaration=True, encoding='iso-8859-1', method='xml')
+        tree.write(self.file, xml_declaration=True, encoding='utf-8', method='xml')
 
     # Running this set_and_commit functions will keep adding new fields,
     # if you are trying to change the major use commitmajor instead
@@ -167,7 +167,7 @@ class BePress(object):
             child2.text = str(self.major)
             tree = (etree.ElementTree(tree.getroot()))
             indent(element, 3)
-            tree.write(self.file, xml_declaration=True, encoding='iso-8859-1', method='xml')
+            tree.write(self.file, xml_declaration=True, encoding='utf-8', method='xml')
 
     # I'm not a fan of creating a separate function to update documents with two majors.
     # I will try to find a better solution in the future
@@ -187,7 +187,7 @@ class BePress(object):
             child3.text = str(self.major2)
             tree = (etree.ElementTree(tree.getroot()))
             indent(element, 3)
-            tree.write(self.file, xml_declaration=True, encoding='iso-8859-1', method='xml')
+            tree.write(self.file, xml_declaration=True, encoding='utf-8', method='xml')
 
 
     # Once Names have been corrected, we need to update the Rights_Holder
@@ -196,7 +196,7 @@ class BePress(object):
         value = tree.xpath("//field[@name='rights_holder']/value")
         value[0].text = str(self.author)
         tree = (etree.ElementTree(tree.getroot()))
-        tree.write(self.file, xml_declaration=True, encoding='iso-8859-1', method='xml')
+        tree.write(self.file, xml_declaration=True, encoding='utf-8', method='xml')
 
 
 # ----------------------------------------------------------------
@@ -217,7 +217,7 @@ def lazy_encode(text):
         regreplace9 = re.sub(r'\u0301', "'", regreplace8)
         regreplace10 = re.sub(r'\u0306', "g", regreplace9)
         regreplace11 = re.sub(r'\u0131', 'i', regreplace10)
-        ret1999 = regreplace11.encode('iso-8859-1')
+        ret1999 = regreplace11.encode('utf-8')
         return ret1999
     except UnicodeEncodeError:
         return 'ENCODING ERROR'
@@ -717,7 +717,7 @@ def xmltransform(infile, xslt, outfile):
         We are currently running Saxon HE, which is an open source xslt processor, and uses a .Net framework.
         This method can replicated using an oXygen transformation scenario, if that is more familiar
     '''
-    return_status = subprocess.run(["Transform", f"-s:{infile}", f"-xsl:{xslt}", f"-o:{outfile}"], encoding="utf8")
+    return_status = subprocess.run(["Transform", f"-s:{infile}", f"-xsl:{xslt}", f"-o:{outfile}"], encoding="utf-8")
 
     if return_status.returncode != 0:
         print(return_status.stderr)
@@ -734,7 +734,7 @@ def roottag(file):
     newroot = ET.Element('documents')
     newroot.insert(0, root)
     tree = (ET.ElementTree(tree.getroot()))
-    tree.write(file, xml_declaration=True, encoding='iso-8859-1', method='xml')
+    tree.write(file, xml_declaration=True, encoding='utf-8', method='xml')
 
 
 def proquest2bepress(py_path, currentpath):
