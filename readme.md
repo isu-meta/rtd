@@ -43,7 +43,7 @@ Next, confirm that the paths in [rtd_workflow_wMARCFINDER.py](code_base/rtd_work
 | merge            | Path to the merge.xsl file              |
 
 
-Finally, run the metadata.bat file.
+Finally, run the metadata.py file.
 
 ``` {.sourceCode .console}
 C:\Users\you_dir\rtd> metadata.py
