@@ -1,12 +1,13 @@
 import os
+from pathlib import Path
 import shutil
 import subprocess
-import sys
 import time
 
 from rtd.reset import delete, move
 from rtd.rtd_workflow_wMARCFINDER import rtd_metadata 
 from rtd.check_names import check
+from rtd.oclc import make_oclc_list, open_oclc_list
 
 def delete_old_files(my_path):
     # Delete all "*batch.xml" files from the current working directory
@@ -48,25 +49,7 @@ def check_metadata(xml_file):
         pass
 
 
-def make_oclc_list(outfile):
-    rtd_dir = os.path.join(my_path, "RTD_PDF")
-
-    with open(outfile, "w", encoding="utf8") as fh:
-        for rtd_pdf in os.listdir(rtd_dir):
-            fh.write(f"{rtd_pdf}\n")
-
-
-def open_oclc_list(oclc_file):
-    if os.name == "nt":
-        subprocess.run(oclc_file)
-    if os.name == "posix":
-        if sys.platform.startswith("darwin"):
-            subprocess.run(["open", oclc_file])
-        else:
-            subprocess.run(["xdg-open", oclc_file])
-
-
-def commit():
+def commit(my_path):
     # Previously handled in commit.py
     timestr = time.strftime("%Y%m%d")
 
@@ -77,29 +60,31 @@ def commit():
     except:
         pass
 
-    os.rename("outfile2.xml", new_name)
+    os.rename(os.path.join(my_path, "outfile2.xml"), os.path.join(my_path, new_name))
 
     output_filename = "{}_RTD".format(timestr)
 
     shutil.move(new_name, "SUCCESSFUL_PDF")
     try:
-        shutil.make_archive(output_filename, 'zip',"SUCCESSFUL_PDF") 
+        shutil.make_archive(output_filename, "zip","SUCCESSFUL_PDF") 
     except:
         os.remove(output_filename)
-        shutil.make_archive(output_filename, 'zip', "SUCCESSFUL_PDF")
+        shutil.make_archive(output_filename, "zip", "SUCCESSFUL_PDF")
 
 
 if __name__ == "__main__":
     my_path = "C:\\Users\\wteal\\Projects\\rtd"
+    input_pdf_dir = "RTD_PDF"
     xml_outfile = "outfile.xml"
     xml_outfile2 = "outfile2.xml"
-    oclc_file = os.path.join(my_path, "oclc_list.txt")
+    oclc_file = Path(my_path, "oclc_list.txt")
 
     delete_old_files(my_path)
     reset(xml_outfile)
     create_metadata()
     check_metadata(xml_outfile)
-    make_oclc_list(oclc_file)
+    make_oclc_list(Path(my_path, input_pdf_dir), oclc_file)
+
     #open_oclc_list(oclc_file) # Need to debug this one.
     #Remove the print below once the above function is fixed.
     print("Open oclc_list.txt and edit it according to https://mddocs.readthedocs.io/en/latest/theses.html#rtds")
@@ -118,7 +103,7 @@ If everything looks okay please hit enter.""")
 
     input("Press Enter to continue. To exit, press Ctl+C.")
 
-    commit()
+    commit(my_path)
     for f in os.listdir(my_path):
         if f.endswith(".zip"):
             shutil.move(f, "..")
