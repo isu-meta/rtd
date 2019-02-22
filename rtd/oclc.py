@@ -45,19 +45,20 @@ def get_oclc_number(pdf_path):
         else:
             for detail_section in request_details:
                 oclc_title = detail_section.xpath("//div[@class='name']/a/strong[text()]")[0].text
-                oclc_author = detail_section.xpath("//div[@class='author']/")[0].text
+                oclc_author = detail_section.xpath("//div[@class='author']")[0].text
                 oclc_type = detail_section.xpath("//div[@class='type']/span[@class='itemType'][text()]")[0].text
                 if ";" in oclc_author:
-                    oclc_author = oclc_author[oclc_author[:oclc_author.index(";")]]
+                    oclc_author = oclc_author[:oclc_author.index(";")]
                 
                 if oclc_author.lower().startswith("by "):
-                    oclc_author = oclc.author[3:]
+                    oclc_author = oclc_author[3:]
                 
                 if (90 <= fuzz.ratio(oclc_author.lower(), pdf_metadata["/Author"].lower()) and
                     90 <= fuzz.ratio(oclc_title.lower(), pdf_metadata["/Title"].lower()) and
                     95 <= fuzz.ratio(oclc_type.lower(), "thesis/dissertation")):
 
-                    oclc_number = detail_section.xpath(oclc_number_xpath)
+                    oclc_number = detail_section.xpath(oclc_number_xpath)[0].text
+                    break
 
     return oclc_number
 
